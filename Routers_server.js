@@ -11,6 +11,6 @@ var utenti = require('./Routers_utenti.js');
 app.use('/utenti', utenti);
 
 
-app.listen(3000,function(req,res){
+app.listen(process.env.PORT || 3000, function () {
  console.log("Server in esecuzione");
 })
