@@ -16,4 +16,9 @@ utenti.get('/:id', function(req, res) {
   res.send('Detaglio dell utente con id :' + req.params.id);
 });
 
+utenti.post('/:id', function(req, res) {
+  res.send('Detaglio dell utente con id :' + req.params.id);
+});
+
+
 module.exports = utenti;
