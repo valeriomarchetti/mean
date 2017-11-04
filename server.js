@@ -14,8 +14,7 @@ app.get('/movies/:id', function (req, res) {
   res.status(403).send('Hai cercato il film con id:' + id_richiesto);
 
 });
-
 /* START DEL SERVER */
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('Listening on port 3000');
 });
