@@ -5,6 +5,8 @@ var utenti = express.Router();
 
 //LE ROTTE PARTONO DA /UTENTI
 
+var bodyParser = require('body-parser');
+utenti.use(bodyParser.json());
 
 // PAGINA PRINCIPALE UTENTI   
 utenti.get('/', function(req, res) {
@@ -17,7 +19,10 @@ utenti.get('/:id', function(req, res) {
 });
 
 utenti.post('/:id', function(req, res) {
-  res.send('Detaglio dell utente con id :' + req.params.id);
+  var body = req.body;
+  //res.send('Detaglio dell utente con id :' + req.params.id + ' | var test: ' + body.test);
+  body.server = "true";
+  res.json(body);
 });
 
 

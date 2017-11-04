@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 //CARICO IL FILE UTENTI CHE E' UN ROUTER 
 //E LO ASSEGNO ALLA VARIABILE UTENTI
