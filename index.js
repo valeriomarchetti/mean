@@ -1,4 +1,21 @@
-var hello = require('./hello');
+var express = require('express');
 
-console.log(hello.name);
-console.log(hello.sayHelloInSpanish('Pablito'));
+/* CREO UN' APPLICAZIONE EXPRESS */
+var app = express();
+
+/* ROUTING */
+app.get('/', function (req, res) {
+  res.send('Hello world');
+});
+
+app.get('/movies/:id', function (req, res) {
+  
+  var id_richiesto = req.params.id;
+  res.status(403).send('Hai cercato il film con id:' + id_richiesto);
+
+});
+
+/* START DEL SERVER */
+app.listen(3000, function () {
+  console.log('Listening on port 3000');
+});
